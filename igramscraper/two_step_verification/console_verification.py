@@ -25,11 +25,11 @@ class ConsoleVerification(TwoStepVerificationAbstractClass):
 
         return selected_choice
 
-    '''
-    Returns: string
-    '''
-
     def get_security_code(self):
+        """
+
+        :return: string
+        """
         security_code = ''
         while (len(security_code) != 6 and not security_code.isdigit()):
             if (security_code):

@@ -1,3 +1,3 @@
-username = None
-password = None
+username = ''
+password = ''
 user_agent = None

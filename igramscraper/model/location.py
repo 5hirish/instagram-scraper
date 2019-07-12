@@ -15,7 +15,7 @@ class Location(InitializerModel):
         super(Location, self).__init__(props)
 
     def __str__(self):
-        string = f'''
+        string = f"""
         Location info:
         Id: {self.identifier}
         Name: {self.name}
@@ -23,7 +23,7 @@ class Location(InitializerModel):
         Longitude: {self.lng}
         Slug: {self.slug}
         Is public page available: {self.has_public_page}
-        '''
+        """
 
         return textwrap.dedent(string)
 

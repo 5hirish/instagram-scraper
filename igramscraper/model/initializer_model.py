@@ -1,5 +1,4 @@
 import time
-import json
 
 
 class InitializerModel:
@@ -8,12 +7,12 @@ class InitializerModel:
 
         self._is_new = True
         self._is_loaded = False
-        '''init data was empty'''
+        """init data was empty"""
         self._is_load_empty = True
         self._is_fake = False
         self._modified = None
 
-        '''Array of initialization data'''
+        """Array of initialization data"""
         self._data = {}
 
         self.modified = time.time()
@@ -23,10 +22,10 @@ class InitializerModel:
 
     def _init(self, props):
         """
-         * @param array $props
-         *
-         * @return $this
-         """
+
+        :param props: props array
+        :return: None
+        """
         for key in props.keys():
             try:
                 self._init_properties_custom(props[key], key, props)

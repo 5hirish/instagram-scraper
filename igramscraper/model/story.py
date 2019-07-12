@@ -22,11 +22,11 @@ class Story(Media):
         super()._init_properties_custom(value, prop, arr)
 
     def __str__(self):
-        string=f'''
+        string = f"""
         Story Info:
         'Id: {self.identifier}
         Hig res image: {self.image_high_resolution_url}
         Media type: {self.type if hasattr(self, 'type') else ''}
-        '''
+        """
         
         return textwrap.dedent(string)

@@ -18,7 +18,7 @@ class Account(InitializerModel):
         self.media_count = 0
         self.is_private = False
         self.is_verified = False
-        self.medias = {}
+        self.medias = []
         self.blocked_by_viewer = False
         self.country_block = False
         self.followed_by_viewer = False
@@ -55,7 +55,7 @@ class Account(InitializerModel):
         Username: {self.username if hasattr(self, 'username') else '-'}
         Full Name: {self.full_name if hasattr(self, 'full_name') else '-'}
         Bio: {self.biography if hasattr(self, 'biography') else '-'}
-        Profile Pic Url: {self.get_profile_picture_url}
+        Profile Pic Url: {self.get_profile_picture_url()}
         External url: {self.external_url if hasattr(self, 'external_url') else '-'}
         Number of published posts: {self.media_count if hasattr(self, 'mediaCount') else '-'}
         Number of followers: {self.followed_by_count if hasattr(self, 'followed_by_count') else '-'}
@@ -106,7 +106,7 @@ class Account(InitializerModel):
             'requested_by_viewer',
             'connected_fb_page'
         ]
-        if prop in standart_properties: 
+        if prop in standart_properties:
             self.__setattr__(prop, value)   
         
         if prop == 'edge_follow':

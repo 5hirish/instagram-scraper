@@ -2,12 +2,9 @@ import urllib.parse
 import textwrap
 
 from .initializer_model import InitializerModel
-from igramscraper import endpoints
-from .carousel_media import CarouselMedia
 from .comment import Comment
-
-
-# there is one more import when Media.owner is set
+from .carousel_media import CarouselMedia
+from .. import endpoints
 
 
 class Media(InitializerModel):
@@ -81,7 +78,7 @@ class Media(InitializerModel):
         return code
 
     def __str__(self):
-        string = f'''
+        string = f"""
         Media Info:
         'Id: {self.identifier}
         Shortcode: {self.short_code}
@@ -93,7 +90,7 @@ class Media(InitializerModel):
         Link: {self.link}
         Hig res image: {self.image_high_resolution_url}
         Media type: {self.type}
-        '''
+        """
 
         return textwrap.dedent(string)
 
@@ -153,8 +150,6 @@ class Media(InitializerModel):
         elif prop == 'carousel_media':
             self.type = Media.TYPE_CAROUSEL
             self.carousel_media = []
-            # print(arr["carousel_media"])
-            exit()
             for carousel_array in arr["carousel_media"]:
                 self.set_carousel_media(arr, carousel_array)
 
@@ -260,12 +255,12 @@ class Media(InitializerModel):
         print(carousel_array)
         # TODO implement
         pass
-        '''
+        """
         param mediaArray
         param carouselArray
         param instance
         return mixed
-        '''
+        """
         # carousel_media = CarouselMedia()
         # carousel_media.type(carousel_array['type'])
 

@@ -1,6 +1,6 @@
 from context import Instagram # pylint: disable=no-name-in-module
 
-instagram = Instagram
+instagram = Instagram()
 instagram.with_credentials('', '', 'pathtocache')
 instagram.login()
 

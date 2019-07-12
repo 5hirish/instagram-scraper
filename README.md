@@ -11,7 +11,7 @@ The goal of this project is to become as minimalistic as possible while still ha
 
 Any ⭐️ or contribution is appreciated if you like the project 🤘
 
-## install
+## How to install
 Simply run:
 ```
 pip install igramscraper
@@ -22,7 +22,7 @@ or download the project via git clone and run the following:
 pip install -r requirements.txt
 ```
 
-## usages
+## Usages
 Some methods do require authentication:
 ```python
 
@@ -31,24 +31,26 @@ from igramscraper.instagram import Instagram
 instagram = Instagram()
 
 # authentication supported
-instagram = Instagram()
 instagram.with_credentials('username', 'password')
 instagram.login()
 
+#Getting an account by id
 account = instagram.get_account_by_id(3)
+
 # Available fields
 print('Account info:')
-print('Id', account.identifier)
-print('Username', account.username)
-print('Full name', account.full_name)
-print('Biography', account.biography)
-print('Profile pic url', account.get_profile_pic_url_hd())
-print('External Url', account.external_url)
-print('Number of published posts', account.media_count)
-print('Number of followers', account.followed_by_count)
-print('Number of follows', account.follows_count)
-print('Is private', account.is_private)
-print('Is verified', account.is_verified)
+print('Id: ', account.identifier)
+print('Username: ', account.username)
+print('Full name: ', account.full_name)
+print('Biography: ', account.biography)
+print('Profile pic url: ', account.get_profile_pic_url_hd())
+print('External Url: ', account.external_url)
+print('Number of published posts: ', account.media_count)
+print('Number of followers: ', account.followed_by_count)
+print('Number of follows: ', account.follows_count)
+print('Is private: ', account.is_private)
+print('Is verified: ', account.is_verified)
+
 # or simply for printing use 
 print(account)
 ```
@@ -77,8 +79,13 @@ account = instagram.get_account('kevin')
 print(account.identifier)
 ```
 
-## more usages
+## More usages
 See examples [here](https://github.com/SergioWagenleitner/instagram-scraper/tree/master/examples).
 
-## other
-instagram-php-scraper [here](https://github.com/postaddictme/instagram-php-scraper/tree/master/examples).
+## How to contribute
+Every contribution is welcome, check out our [TODOs](https://github.com/realsirjoe/instagram-scraper/blob/master/CONTRIBUTING.md)
+<br />
+and join our telegram group: https://t.me/joinchat/J86yTBAtZlEi-6T6LOxijw
+
+## Other
+instagram-php-scraper [here](https://github.com/postaddictme/instagram-php-scraper/)
